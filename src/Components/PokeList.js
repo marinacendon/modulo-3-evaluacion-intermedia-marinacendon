@@ -1,24 +1,38 @@
 import React from 'react';
 import Pokemon from './Pokemon';
+import '../Stylesheet/pokemonList.css';
 
-class PokeList extends React.Component {
-  render() {
-    const eachPokemon = this.props.List.map((pokemon) => {
-      return <Pokemon name={pokemon.name} url={pokemon.url} types={pokemon.types} />;
-    });
-    // console.log(this.props.List);
-    // const types = this.props.List.types.map((pokemon) => {
-    //   return <Pokemon type={pokemon.type}></Pokemon>;
-    // });
-
-    return (
-      <div>
-        PokeList
-        {eachPokemon}
-        {/* {types} */}
-      </div>
-    );
-  }
-}
+const PokeList = (props) => {
+  const eachPokemon = props.List.map((pokemon, index) => {
+    if (props.favList.includes(pokemon)) {
+      return (
+        <li className="poke-boxes" key={pokemon.id}>
+          <Pokemon
+            classN="favorito"
+            index={index}
+            name={pokemon.name}
+            url={pokemon.url}
+            types={pokemon.types}
+            handleFavorite={props.handleFavorite}
+          />
+        </li>
+      );
+    } else {
+      return (
+        <li className="poke-boxes" key={pokemon.id}>
+          <Pokemon
+            classN=""
+            index={index}
+            name={pokemon.name}
+            url={pokemon.url}
+            types={pokemon.types}
+            handleFavorite={props.handleFavorite}
+          />
+        </li>
+      );
+    }
+  });
+  return <ul className="poke-boxes-container">{eachPokemon}</ul>;
+};
 
 export default PokeList;

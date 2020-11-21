@@ -1,0 +1,18 @@
+.poke-boxes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.poke-boxes {
+  width: 200px;
+  height: 250px;
+  background-color: blanchedalmond;
+  list-style: none;
+  border: rgba(16, 140, 255, 0.513) 8px solid;
+  margin: 50px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.404);
+}

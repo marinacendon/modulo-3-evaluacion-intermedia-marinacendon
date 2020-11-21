@@ -1,0 +1,9 @@
+.pokemonName {
+  border-top: red 10px solid;
+  border-bottom: red 10px solid;
+  color: rgb(255, 1, 1);
+  margin-bottom: 10px;
+}
+.pokemonPowers {
+  font-weight: bold;
+}
